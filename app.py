@@ -128,5 +128,5 @@ def video():
 if __name__ == "__main__":
     app.run(debug=True)
 
-cap.release()
-cv2.destroyAllWindows()
+# cap.release()
+# cv2.destroyAllWindows()
