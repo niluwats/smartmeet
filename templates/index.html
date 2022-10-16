@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
   <body>
     <h1>Live streaming</h1>
+    <!-- <form method="get">
+      <input type="submit" value="Start Streaming"/>
+    </form> -->
     <div>
-        <img src="{{ url_for('video') }}" width="100%"/>
+
+      <img src="{{ url_for('video') }}" width="70%" />
     </div>
-            
     </body>
-
-
 </html>
