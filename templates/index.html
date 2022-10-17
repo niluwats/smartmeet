@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
   <body>
-    <h1>Live streaming</h1>
-    <div>
-        <img src="{{ url_for('video') }}" width="100%"/>
+    <h1>SMARTMEET</h1>
+    <button id="stop_btn" onclick="stopVideo()">Stop video</button>
+    <button id="start_btn" onclick="startVideo()">Start video</button>
+    <div id="videocontainer">
+      <img src="{{ url_for('video') }}" width="70%" />
     </div>
-            
+
+    <script>
+      function stopVideo(){
+        videoElement=document.getElementById('videocontainer');
+        videoElement.style.display="none";
+        document.getElementById('stop_btn').style.display="none"
+        document.getElementById('start_btn').style.display="block"
+      }
+
+      function startVideo(){
+        videoElement=document.getElementById('videocontainer');
+        videoElement.style.display="block";
+        document.getElementById('start_btn').style.display="none"
+        document.getElementById('stop_btn').style.display="block"
+      }
+    </script>
     </body>
-
-
 </html>

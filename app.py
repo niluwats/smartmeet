@@ -1,5 +1,5 @@
 from pyexpat import model
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, redirect, url_for
 import cv2
 from tensorflow.keras.models import load_model
 import numpy as np
@@ -99,9 +99,7 @@ def generate_frames():
                 if len(sentence) > 5:
                     sentence = sentence[-5:]
 
-            cv2.rectangle(image, (0, 0), (640, 40), (245, 117, 16), -1)
-            cv2.putText(image, ' '.join(
-                sentence), (3, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            show_captions(image, sentence)
 
             ret, buffer = cv2.imencode('.jpg', image)
             frame = buffer.tobytes()
@@ -110,7 +108,13 @@ def generate_frames():
                    b'Content-Type: image/jpeg\r\n\r\n'+frame+b'\r\n')
 
 
-def video_off():
+def show_captions(image, sentence):
+    cv2.rectangle(image, (0, 0), (640, 40), (245, 117, 16), -1)
+    cv2.putText(image, ' '.join(
+        sentence), (3, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+
+
+def close_cv2():
     cap.release()
     cv2.destroyAllWindows()
 
@@ -126,7 +130,8 @@ def video():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
+
 
 # cap.release()
 # cv2.destroyAllWindows()

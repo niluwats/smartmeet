@@ -1,8 +1,10 @@
-FROM python:alpine3.7
+FROM python:3.9.1
 RUN mkdir /app
 COPY . /app
 WORKDIR /app
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 RUN pip install -r requirements.txt
-RUN pip install tensorflow==2.5.0 tensorflow-gpu==2.5.0
 EXPOSE 5000
 CMD python ./app.py
+
