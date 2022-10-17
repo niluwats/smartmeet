@@ -1,4 +1,8 @@
 flask
 opencv-python
-tensorflow
 mediapipe
+sklearn
+matplotlib
+numpy
+tensorflow==2.5.0
+tensorflow-gpu==2.5.0
