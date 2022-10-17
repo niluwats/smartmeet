@@ -1,0 +1,138 @@
+.content {
+    width: 70vw;
+    background-color: azure;
+    height: 90%;
+    border-radius: 25px;
+    padding:2px;
+}
+
+.main {
+    padding-left: 15vw;
+    padding-right: 15vw;
+    height: 90%;
+}
+
+.topbar {
+    margin-bottom: 2%;
+}
+
+.buttonbar {
+    margin-top: 5px;
+    justify-content: space-around;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 15px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button:hover:enabled {
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.24), 0 15px 60px 0 rgba(0, 0, 0, 0.19);
+}
+
+.play {
+    background-color: #0bc831f2;
+}
+
+.play:hover:not(disabled) {
+    background-color: #19792c;
+}
+
+.stop {
+    background-color: #d62e2e;
+}
+
+.stop:hover:not(disabled) {
+    background-color: #852929;
+}
+
+.button:disabled {
+    background-color: grey !important;
+}
+
+#videoContainer {
+    padding: 5%;
+    width: 90%;
+    /* height: 63vh; */
+    height:auto;
+}
+
+#videoContainerOutline {
+    background-color: rgb(1, 117, 225);
+    border-radius: 50px;
+    padding: 5%;
+    width: 90%;
+    height:auto;
+}
+
+#video {
+    border-radius: 10px;
+    width: 95%;
+}
+
+.heading h1 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.5em;
+    font-style: italic;
+    font-family: "Playfair Display", "Bookman", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #111;
+    color: dodgerblue;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.tagline {
+    line-height: 1.5em;
+    padding-bottom: 15px;
+    text-transform: none;
+    font-size: 1.4em;
+    font-weight: normal;
+    font-style: italic;
+    font-family: "Playfair Display", "Bookman", serif;
+    color: #999;
+    letter-spacing: -0.005em;
+    word-spacing: 1px;
+    letter-spacing: none;
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        width: 100%;
+    }
+    .main {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+  }

@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-  <body>
-    <h1>SMARTMEET</h1>
-    <button id="stop_btn" onclick="stopVideo()">Stop video</button>
-    <button id="start_btn" onclick="startVideo()">Start video</button>
-    <div id="videocontainer">
-      <img src="{{ url_for('video') }}" width="70%" />
+
+<body>
+  <div class="main">
+    <div class="heading center">
+      <h1>SMARTMEET
+    </h1>
     </div>
+    <div class="tagline center flex">
+      <span>Meeting for everyone</span>
+    </div>
+    <div class="wrap"></div>
+    <div class="content">
+      <div class="w-100 flex buttonbar">
+        <button class="button play" id="start_btn"><span>Start video</span></button>
 
-    <script>
-      function stopVideo(){
-        videoElement=document.getElementById('videocontainer');
-        videoElement.style.display="none";
-        document.getElementById('stop_btn').style.display="none"
-        document.getElementById('start_btn').style.display="block"
-      }
+        <button class="button stop" disabled id="stop_btn" ><span>Stop video</span></button>
+      </div>
+      <div id="videoContainer" class="flex center">
+        <div id="videoContainerOutline" class="flex center">
+          <img id="video" src="{{ url_for('video') }}" />
+          <!-- <img id="video" /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../static/js/scrips.js"></script>
 
-      function startVideo(){
-        videoElement=document.getElementById('videocontainer');
-        videoElement.style.display="block";
-        document.getElementById('start_btn').style.display="none"
-        document.getElementById('stop_btn').style.display="block"
-      }
-    </script>
-    </body>
+</body>
+
 </html>
