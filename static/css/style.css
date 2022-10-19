@@ -98,6 +98,11 @@
     border-radius: 10px;
     width: 95%;
 }
+/* 
+#defaultImage {
+    border-radius: 10px;
+    width: 95%;
+} */
 
 .heading h1 {
     font-size: 30px;
@@ -121,7 +126,7 @@
     font-weight: normal;
     font-style: italic;
     font-family: "Playfair Display", "Bookman", serif;
-    color: #999;
+    color: rgb(11, 10, 10);
     letter-spacing: -0.005em;
     word-spacing: 1px;
     letter-spacing: none;
